@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FDE205</color>
+    <color name="colorTab">#686868</color>
+    <color name="colorTabAndroidActive">#69B66E</color>
+    <color name="colorTabJavaActive">#FF1515</color>
+    <color name="colorTabKotlinActive">#F78C6C</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorWindow">#FFF3E0</color>
+</resources>

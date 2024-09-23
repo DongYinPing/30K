@@ -1,0 +1,19 @@
+// 用到ARouter路由则需要再应用它
+android {
+    defaultConfig {
+        // ARouter
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+}
+
+dependencies {
+    // router
+    kapt rootProject.libs.arouterCompiler
+    implementation rootProject.libs.arouterApi
+    implementation project(':base_frame')
+    implementation project(':app_path')
+}

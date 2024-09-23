@@ -1,0 +1,22 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from: this.rootProject.file('module_lib.gradle')
+
+android {
+    namespace 'com.app.api'
+}
+
+// lib的第三方依赖
+dependencies {
+    // 用协程去请求
+    implementation rootProject.libs.lifecycleCommon
+
+    // 网络请求相关，retrofit
+    implementation rootProject.libs.retrofit2
+    implementation rootProject.libs.retrofit2Gson
+    implementation rootProject.libs.loggingInterceptor
+    implementation rootProject.libs.gson
+}

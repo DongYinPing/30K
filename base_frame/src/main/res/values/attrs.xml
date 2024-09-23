@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--填充色-->
+    <attr name="solidColor" format="color|reference" />
+    <!--边框色-->
+    <attr name="strokeColor" format="color|reference" />
+    <!--边框宽度-->
+    <attr name="strokeWidth" format="dimension" />
+    <!--圆角弧度-->
+    <attr name="radius" format="dimension" />
+    <!--四个角的圆角弧度-->
+    <attr name="topLeftRadius" format="dimension" />
+    <attr name="topRightRadius" format="dimension" />
+    <attr name="bottomLeftRadius" format="dimension" />
+    <attr name="bottomRightRadius" format="dimension" />
+    <!--是否使用Selector选择器-->
+    <attr name="openSelector" format="boolean" />
+    <!--使用选择器时的字体色-->
+    <attr name="textNormalColor" format="color|reference" />
+    <attr name="textSelectColor" format="color|reference" />
+    <!--选中填充色-->
+    <attr name="solidSelectColor" format="color|reference" />
+    <!--选中边框色-->
+    <attr name="strokeSelectColor" format="color|reference" />
+
+    <declare-styleable name="ShapeTextView">
+        <!--填充色-->
+        <attr name="solidColor" />
+        <!--边框色-->
+        <attr name="strokeColor" />
+        <!--边框宽度-->
+        <attr name="strokeWidth" />
+        <!--圆角弧度-->
+        <attr name="radius" />
+        <!--四个角的圆角弧度-->
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ShapeFrameView">
+        <!--填充色-->
+        <attr name="solidColor" />
+        <!--边框色-->
+        <attr name="strokeColor" />
+        <!--边框宽度-->
+        <attr name="strokeWidth" />
+        <!--圆角弧度-->
+        <attr name="radius" />
+        <!--四个角的圆角弧度-->
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ShapeView">
+        <!--填充色-->
+        <attr name="solidColor" />
+        <!--边框色-->
+        <attr name="strokeColor" />
+        <!--边框宽度-->
+        <attr name="strokeWidth" />
+        <!--圆角弧度-->
+        <attr name="radius" />
+        <!--四个角的圆角弧度-->
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+    </declare-styleable>
+
+    <!--自定义CheckBox-->
+    <declare-styleable name="ShapeCheckBox">
+        <!--填充色-->
+        <attr name="solidColor" />
+        <!--边框色-->
+        <attr name="strokeColor" />
+        <!--边框宽度-->
+        <attr name="strokeWidth" />
+        <!--圆角弧度-->
+        <attr name="radius" />
+        <!--四个角的圆角弧度-->
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+        <!--是否使用Selector选择器-->
+        <attr name="openSelector" />
+        <!--使用选择器时的字体色-->
+        <attr name="textNormalColor" />
+        <attr name="textSelectColor" />
+        <!--选中填充色-->
+        <attr name="solidSelectColor" />
+        <!--选中边框色-->
+        <attr name="strokeSelectColor" />
+    </declare-styleable>
+
+    <!--自定义RadioButton-->
+    <declare-styleable name="ShapeRadioButton">
+        <!--填充色-->
+        <attr name="solidColor" />
+        <!--边框色-->
+        <attr name="strokeColor" />
+        <!--边框宽度-->
+        <attr name="strokeWidth" />
+        <!--圆角弧度-->
+        <attr name="radius" />
+        <!--四个角的圆角弧度-->
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+        <!--是否使用Selector选择器-->
+        <attr name="openSelector" />
+        <!--使用选择器时的字体色-->
+        <attr name="textNormalColor" />
+        <attr name="textSelectColor" />
+        <!--选中填充色-->
+        <attr name="solidSelectColor" />
+        <!--选中边框色-->
+        <attr name="strokeSelectColor" />
+    </declare-styleable>
+
+    <!--验证码的属性-->
+    <declare-styleable name="VerifyCodeEditText">
+        <attr name="figures" format="integer" /><!--验证码的个数-->
+        <attr name="codeMargin" format="dimension" /><!--验证码的之间的间隔-->
+        <attr name="selectBorderColor" format="reference" /><!--选中的边框颜色-->
+        <attr name="normalBorderColor" format="reference" /><!--普通的边框颜色-->
+        <attr name="borderRadius" format="dimension" /><!--边角的滑度 -->
+        <attr name="borderWidth" format="dimension" /><!--边框的厚度 -->
+        <attr name="cursorDuration" format="integer" /><!--光标跳动的间隔时间 -->
+        <attr name="cursorWidth" format="dimension" /><!--光标的宽度 -->
+        <attr name="cursorColor" format="color|reference" /><!--光标的颜色 -->
+    </declare-styleable>
+    <!--圆角遮罩-->
+    <declare-styleable name="RoundRectCoverView">
+        <attr name="roundCorner" format="dimension" />
+        <attr name="roundPadding" format="dimension" />
+        <attr name="roundCoverColor" format="color" />
+    </declare-styleable>
+</resources>

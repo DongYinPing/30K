@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: this.rootProject.file('module_lib.gradle')
+apply from: this.rootProject.file('module_router.gradle')
+
+import java.text.SimpleDateFormat
+
+android {
+    namespace "com.app.main"
+
+    defaultConfig {
+        // 应用包名
+        applicationId rootProject.app.applicationId
+        // 应用版本号
+        versionCode rootProject.app.versionCode
+        // 应用版本名
+        versionName rootProject.app.versionName
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../key.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true // support buildConfigField
+    }
+
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach { output ->
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd")
+            Calendar lastDate = Calendar.getInstance()
+            String sDate = sdf.format(lastDate.getTime())
+            def outFile = output.outputFile
+            if (outFile != null && outFile.name.endsWith('.apk')) {
+                outputFileName = "App-${variant.versionName}-${sDate}-${buildType.name}.apk"
+            }
+        }
+    }
+}
+
+// APP的依赖，需要implementation去依赖
+dependencies {
+    implementation fileTree(include: ['*.jar', "*.aar"], dir: 'libs')
+
+    // router 阿里路由
+    kapt rootProject.libs.arouterCompiler
+    implementation rootProject.libs.arouterApi
+
+    // annotation
+    implementation rootProject.libs.annotation
+
+    // multidex
+    implementation rootProject.libs.multidex
+
+    // androidUI
+    implementation rootProject.libs.coreKtx
+    implementation rootProject.libs.appcompat
+    implementation rootProject.libs.activityKtx
+    implementation rootProject.libs.fragmentKtx
+    implementation rootProject.libs.constraintlayout
+    implementation rootProject.libs.viewpager2
+    implementation rootProject.libs.cardview
+
+    // lifecycle
+    implementation rootProject.libs.liveDataKtx
+    implementation rootProject.libs.viewModelKtx
+    implementation rootProject.libs.lifecycleCommon
+
+    // DataStore存储
+    implementation rootProject.libs.datastore
+
+    // 网络请求相关，retrofit
+    implementation rootProject.libs.retrofit2
+    implementation rootProject.libs.retrofit2Gson
+    implementation rootProject.libs.loggingInterceptor
+    implementation rootProject.libs.gson
+    // 序列化
+    implementation rootProject.libs.serialization
+
+    // 图片
+    implementation rootProject.libs.coil
+    implementation rootProject.libs.coilGif
+
+    // feature
+    implementation project(':feature_study')
+
+}

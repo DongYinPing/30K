@@ -1,0 +1,9 @@
+package com.app.path
+
+object Page {
+    const val MAIN_FRAGMENT = "/APP/MAIN_FRAGMENT"
+    const val ANDROID_FRAGMENT = "/STUDY/ANDROID_FRAGMENT"
+    const val JAVA_FRAGMENT = "/STUDY/JAVA_FRAGMENT"
+    const val KOTLIN_FRAGMENT = "/STUDY/KOTLIN_FRAGMENT"
+    const val MARKDOWN_FRAGMENT = "/STUDY/MARKDOWN_FRAGMENT"
+}

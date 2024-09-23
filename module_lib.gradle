@@ -1,0 +1,78 @@
+android {
+    compileSdk rootProject.ext.android.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        incremental true
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    kotlin {
+        jvmToolchain(17)
+    }
+
+    buildFeatures {
+        dataBinding = false
+        viewBinding = true
+    }
+}
+
+dependencies {
+    // Rebuild Project Err，lib模块用 compileOnly aar，app模块 implementation aar
+    compileOnly fileTree(dir: 'libs', include: ['*.jar', "*.aar"])
+
+    // ARouterApi
+    implementation rootProject.libs.arouterApi
+
+    // Annotation
+    implementation rootProject.libs.annotation
+
+    // Multidex
+    implementation rootProject.libs.multidex
+
+    // AndroidUI
+    implementation rootProject.libs.coreKtx
+    implementation rootProject.libs.appcompat
+    implementation rootProject.libs.activityKtx
+    implementation rootProject.libs.fragmentKtx
+    implementation rootProject.libs.constraintlayout
+    implementation rootProject.libs.recyclerview
+    implementation rootProject.libs.viewpager2
+    implementation rootProject.libs.cardview
+    implementation rootProject.libs.material
+
+    // Lifecycle
+    implementation rootProject.libs.liveDataKtx
+    implementation rootProject.libs.viewModelKtx
+    implementation rootProject.libs.lifecycleCommon
+
+    // DataStore存储
+    implementation rootProject.libs.datastore
+
+    // 网络请求相关，retrofit
+    implementation rootProject.libs.retrofit2
+    implementation rootProject.libs.retrofit2Gson
+    implementation rootProject.libs.loggingInterceptor
+    implementation rootProject.libs.gson
+
+    // 序列化
+    implementation rootProject.libs.serialization
+
+    // 图片
+    implementation rootProject.libs.coil
+    implementation rootProject.libs.coilGif
+
+    // 工具类
+    implementation rootProject.libs.utilcodex
+}
